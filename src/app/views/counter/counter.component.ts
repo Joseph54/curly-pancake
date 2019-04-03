@@ -8,13 +8,19 @@ import {Component, EventEmitter} from '@angular/core';
 export class CounterComponent {
   counterChange: EventEmitter<null> = new EventEmitter<null>();
   counter: number;
-  output: string;
+  output: number;
 
   constructor() {
     this.counter = 0;
+    this.counterChange.subscribe(
+      () => this.output = this.counter
+    );
   }
 
-  decreaseCounter() {}
+  decreaseCounter() {
+    this.counter--;
+    this.counterChange.emit();
+  }
 
   increaseCounter() {
     this.counter++;
