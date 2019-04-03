@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="center space-between" fxLayoutGap="2%">
-  <p>The count is now {{output}}</p>
+  <p>The count is now {{output}} {{star$ | async}}</p>
   <div fxLayout="row" fxLayoutAlign="start space-between" fxLayoutGap="2%">
     <button mat-flat-button color="primary" (click)="increaseCounter()">increase</button>
     <button mat-flat-button color="accent" (click)="decreaseCounter()">decrease</button>
